@@ -28,6 +28,7 @@ import SOSScreen from "./screen/SOSScreen";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import PatientInformation from "./screen/PatientInformation";
+import HospitalSOS from "./screen/HospitalSOS";
 
 const Stack = createNativeStackNavigator();
 
@@ -71,10 +72,15 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name={"SOS"} component={SOSScreen} />
+        <Stack.Screen
+          name={"Hospital SOS "}
+          component={HospitalSOS}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name={"Patient Information"}
           component={PatientInformation}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
