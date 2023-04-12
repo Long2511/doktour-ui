@@ -33,7 +33,7 @@ export const Color = {
   white: "#fff",
   slategray_100: "#6b779a",
   slategray_200: "rgba(107, 119, 154, 0.05)",
-  darkgray: "#979797",
+  darkgray: "#f8f8fa",
   deepskyblue_100: "#20a4f3",
   darkslategray_100: "#222b45",
   greenPrimary: "#5db075",

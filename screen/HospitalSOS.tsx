@@ -20,36 +20,37 @@ const HospitalSOS = ({navigation}) => {
               width: "100%",
               height: 450,
               resizeMode: "contain",
-              marginBottom: -40,
             }}
             resizeMethod="scale"
             source={require("../assets/HospitalSOSBanner.png")}
           />
         </View>
-        <View style={styles.sosButton}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate("Patient Information");
-            }}>
-            <Image
-              style={{
-                width: 180,
-                height: 180,
-                resizeMode: "contain",
-                alignSelf: "center",
-              }}
-              resizeMethod="scale"
-              source={require("../assets/SOSButton.png")}
-            />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate("Patient Information");
-            }}>
-            <Text style={styles.text}>SOS Dashboard</Text>
-          </TouchableOpacity>
+        <View style={styles.bottomContainer}>
+          <View style={styles.sosButton}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("Patient Information");
+              }}>
+              <Image
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "contain",
+                  alignSelf: "center",
+                }}
+                resizeMethod="scale"
+                source={require("../assets/SOSButton.png")}
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("Patient Information");
+              }}>
+              <Text style={styles.title}>SOS Dashboard</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </ScrollView>
@@ -57,11 +58,22 @@ const HospitalSOS = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
-  imageContainer: {
+  container: {
     flex: 1,
+    flexDirection: "column",
+    justifyContent: "space-between",
+    backgroundColor: "D0D6EA",
+  },
+  imageContainer: {
+    flexGrow: 1,
+    marginTop: "10%",
     alignItems: "center",
     justifyContent: "center",
+  },
+  bottomContainer: {
+    marginTop: "15%",
+    flexGrow: 1,
+    justifyContent: "flex-end",
   },
   buttonContainer: {
     flex: 1,
@@ -73,8 +85,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 50,
   },
-  text: {color: "white", fontSize: 20},
-  sosButton: {paddingBottom: 20},
+  title: {color: "white", fontSize: 20},
+  sosButton: {paddingBottom: "15%"},
 });
 
 export default HospitalSOS;

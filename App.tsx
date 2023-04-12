@@ -73,7 +73,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name={"Hospital SOS "}
+          name={"Hospital SOS"}
           component={HospitalSOS}
           options={{headerShown: false}}
         />
