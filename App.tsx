@@ -29,6 +29,8 @@ import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import PatientInformation from "./screen/PatientInformation";
 import HospitalSOS from "./screen/HospitalSOS";
+import {Provider} from "react-redux";
+import {store} from "./redux-toolkit/store/store";
 
 const Stack = createNativeStackNavigator();
 
@@ -70,20 +72,22 @@ const App = () => {
   };
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name={"Hospital SOS"}
-          component={HospitalSOS}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name={"Patient Information"}
-          component={PatientInformation}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name={"Hospital SOS"}
+            component={HospitalSOS}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name={"Patient Information"}
+            component={PatientInformation}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 
