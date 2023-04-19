@@ -30,21 +30,6 @@ const PatientInformation = ({navigation}) => {
     {label: "Colon and rectal surgeon", value: "Colon and rectal surgeon"},
     {label: "Dermatologist", value: "Dermatologist"},
     {label: "Endocrinologist", value: "Endocrinologist"},
-    {label: "Gastroenterologist", value: "Gastroenterologist"},
-    {label: "Geriatrician", value: "Geriatrician"},
-    {label: "Neurosurgeon", value: "Neurosurgeon"},
-    {label: "Ophthalmologist", value: "Ophthalmologist"},
-    {label: "Otolaryngologist (ENT)", value: "ent"},
-    {label: "Orthopaedic ", value: "Orthopaedic "},
-    {label: "Pediatric surgeon ", value: "Pediatric surgeon "},
-    {label: "Surgical oncologist", value: "Surgical oncologist"},
-    {label: "Thoracic surgeon", value: "Thoracic surgeon"},
-    {label: "Vascular surgeon", value: "Vascular surgeon"},
-    {label: "Urologist", value: "Urologist"},
-    {
-      label: "Obstetrician and gynecologist",
-      value: "Obstetrician and gynecologist",
-    },
   ]);
 
   const genderOptions = [
@@ -198,7 +183,7 @@ const styles = StyleSheet.create({
   title: {
     color: Color.darkslategray_100,
     fontSize: FontSize.size_lg,
-    fontWeight: "200",
+    fontWeight: "bold",
   },
   titleBold: {
     marginTop: Border.lg,
