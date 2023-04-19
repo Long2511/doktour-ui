@@ -1,22 +1,20 @@
 import {
-  Button,
   Image,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  TouchableWithoutFeedbackComponent,
   View,
 } from "react-native";
-import {FontSize, Border, Color} from "../GlobalStyle/GlobalStyles";
+import {Border, Color, FontSize} from "../GlobalStyle/GlobalStyles";
 import DropDownPicker from "react-native-dropdown-picker";
+import * as React from "react";
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../redux-toolkit/store/store";
-import {increment} from "../redux-toolkit/slice/patientInformationSlice";
 // @ts-ignore
 import SwitchSelector from "react-native-switch-selector";
-import * as React from "react";
 
 // @ts-ignore
 const PatientInformation = ({navigation}) => {
@@ -27,12 +25,26 @@ const PatientInformation = ({navigation}) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
   const [items, setItems] = useState([
-    {label: "Spain", value: "spain"},
-    {label: "Madrid", value: "madrid", parent: "spain"},
-    {label: "Barcelona", value: "barcelona", parent: "spain"},
-    {label: "Italy", value: "italy"},
-    {label: "Rome", value: "rome", parent: "italy"},
-    {label: "Finland", value: "finland"},
+    {label: "General surgeon", value: "General surgeon"},
+    {label: "Cardiologist", value: "Cardiologist"},
+    {label: "Colon and rectal surgeon", value: "Colon and rectal surgeon"},
+    {label: "Dermatologist", value: "Dermatologist"},
+    {label: "Endocrinologist", value: "Endocrinologist"},
+    {label: "Gastroenterologist", value: "Gastroenterologist"},
+    {label: "Geriatrician", value: "Geriatrician"},
+    {label: "Neurosurgeon", value: "Neurosurgeon"},
+    {label: "Ophthalmologist", value: "Ophthalmologist"},
+    {label: "Otolaryngologist (ENT)", value: "ent"},
+    {label: "Orthopaedic ", value: "Orthopaedic "},
+    {label: "Pediatric surgeon ", value: "Pediatric surgeon "},
+    {label: "Surgical oncologist", value: "Surgical oncologist"},
+    {label: "Thoracic surgeon", value: "Thoracic surgeon"},
+    {label: "Vascular surgeon", value: "Vascular surgeon"},
+    {label: "Urologist", value: "Urologist"},
+    {
+      label: "Obstetrician and gynecologist",
+      value: "Obstetrician and gynecologist",
+    },
   ]);
 
   const genderOptions = [
@@ -80,13 +92,16 @@ const PatientInformation = ({navigation}) => {
           selectedColor={Color.white}
           buttonColor={Color.deepskyblue_100}
           borderColor={Color.slategray_200}
-          boderRadius={90}
+          borderRadius={90}
           animationDuration={150}
           backgroundColor={Color.milkWhite}
           height={50}
           borderWidth={2}
           style={styles.selectorButton}
+          initial={2}
+          onPress={(r: any) => console.log(`Call onPress with value: ${r}`)}
         />
+
         <View style={styles.subTitleContainer}>
           <Text style={styles.specialtyText}>Age</Text>
           <TextInput
@@ -94,6 +109,12 @@ const PatientInformation = ({navigation}) => {
               paddingTop: Border.xsm,
               backgroundColor: Color.shadedWhite,
               borderRadius: Border.xsm,
+              color: Color.black,
+            }}
+            placeholder={"Please enter patient age"}
+            placeholderTextColor={Color.gray04}
+            onBlur={r => {
+              console.log(r.nativeEvent.text);
             }}
           />
         </View>
@@ -104,6 +125,7 @@ const PatientInformation = ({navigation}) => {
               paddingTop: Border.xsm,
               backgroundColor: Color.shadedWhite,
               borderRadius: Border.xsm,
+              color: Color.black,
             }}
             multiline={true}
             numberOfLines={4}
@@ -111,39 +133,56 @@ const PatientInformation = ({navigation}) => {
             placeholderTextColor={Color.gray04}
             textAlignVertical={"top"}
           />
-          <View style={{flexDirection: "row", justifyContent: "space-evenly"}}>
-            <TouchableOpacity>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+              marginTop: 45,
+            }}>
+            <TouchableOpacity
+              style={{alignItems: "center"}}
+              onPress={() => {
+                console.log("pressed camera");
+              }}>
               <Image
-                source={require("../assets/camera.png")}
+                source={require("../assets/camera.450.png")}
                 style={{
-                  width: 180,
-                  height: 180,
+                  width: 90,
+                  height: 90,
                   resizeMode: "contain",
                   alignSelf: "center",
                 }}
               />
+              <Text style={styles.specialtyText}>Camera</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              style={{alignItems: "center"}}
+              onPress={() => {
+                console.log("pressed mic");
+              }}>
               <Image
                 source={require("../assets/mic.png")}
                 style={{
-                  marginTop: 50,
-                  width: 180,
-                  height: 100,
+                  width: 90,
+                  height: 90,
                   resizeMode: "contain",
                   alignSelf: "center",
                 }}
               />
+              <Text style={styles.specialtyText}>Voice Message</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            style={styles.buttonContainer}
-            onPress={() => {
-              navigation.navigate("Patient Information");
-            }}>
-            <Text style={styles.sosText}>SOS Dashboard</Text>
-          </TouchableOpacity>
         </View>
+      </View>
+      <View style={styles.bottomContainer}>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => {
+            navigation.navigate("Patient Information");
+          }}>
+          <Text style={styles.sosText}>Search for Doctors</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -191,6 +230,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,
+  },
+  bottomContainer: {
+    paddingBottom: Border.xsm,
+    width: "90%",
+    alignSelf: "center",
+    justifyContent: "center",
   },
 });
 
