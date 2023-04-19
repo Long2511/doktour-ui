@@ -65,14 +65,14 @@ const styles = StyleSheet.create({
     backgroundColor: "D0D6EA",
   },
   imageContainer: {
-    flexGrow: 1,
-    marginTop: "10%",
+    flex: 1,
+    marginTop: "5%",
     alignItems: "center",
     justifyContent: "center",
   },
   bottomContainer: {
     marginTop: "15%",
-    flexGrow: 1,
+    flex: 1,
     justifyContent: "flex-end",
   },
   buttonContainer: {
