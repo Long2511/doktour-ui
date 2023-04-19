@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import type {PropsWithChildren} from "react";
 import React from "react";
 import {StyleSheet, Text, useColorScheme, View} from "react-native";
@@ -16,6 +9,7 @@ import PatientInformation from "./screen/PatientInformation";
 import HospitalSOS from "./screen/HospitalSOS";
 import {Provider} from "react-redux";
 import {store} from "./redux-toolkit/store/store";
+import FindDoctor from "./screen/FindDoctor";
 
 const Stack = createNativeStackNavigator();
 
@@ -68,6 +62,11 @@ const App = () => {
           <Stack.Screen
             name={"Patient Information"}
             component={PatientInformation}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name={"Find Doctor"}
+            component={FindDoctor}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

@@ -164,9 +164,9 @@ const PatientInformation = ({navigation}) => {
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() => {
-            navigation.navigate("Patient Information");
+            navigation.navigate("Find Doctor");
           }}>
-          <Text style={styles.sosText}>Search for Doctors</Text>
+          <Text style={styles.buttonText}>Search for Doctors</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
   dropDown: {zIndex: 2},
   selectorButton: {marginTop: Border.lg},
   subTitleContainer: {marginTop: Border.lg},
-  sosText: {fontSize: 20, color: Color.white},
+  buttonText: {fontSize: 20, color: Color.white},
   buttonContainer: {
     marginTop: Border.lg,
     width: "100%",
