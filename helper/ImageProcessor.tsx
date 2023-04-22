@@ -1,4 +1,4 @@
-import { Image } from "react-native";
+import {Image} from "react-native";
 
 export const ImageHelper = {
   "3aa28493-2173-4082-bc6f-78a1d9d0c689": {
@@ -26,9 +26,3 @@ export const ImageHelper = {
     uri: require("../assets/doctor-images/bd7acbea-c1b1-46c2-aed5-3ad53abb28ba.png"),
   },
 };
-
-export const getDoctorImage(id) {
-  for (id in ImageHelper){
-    if (ImageHelper)
-  }
-}
