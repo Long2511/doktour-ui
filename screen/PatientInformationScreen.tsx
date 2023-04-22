@@ -17,7 +17,7 @@ import {RootState} from "../redux-toolkit/store/store";
 import SwitchSelector from "react-native-switch-selector";
 
 // @ts-ignore
-const PatientInformation = ({navigation}) => {
+const PatientInformationScreen = ({navigation}) => {
   const patientInformation = useSelector(
     (state: RootState) => state.patientInformation.value,
   );
@@ -25,11 +25,11 @@ const PatientInformation = ({navigation}) => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
   const [items, setItems] = useState([
-    {label: "General surgeon", value: "General surgeon"},
-    {label: "Cardiologist", value: "Cardiologist"},
-    {label: "Colon and rectal surgeon", value: "Colon and rectal surgeon"},
-    {label: "Dermatologist", value: "Dermatologist"},
-    {label: "Endocrinologist", value: "Endocrinologist"},
+    {label: "Viralogist", value: "Viralogist"},
+    {label: "Oncologists", value: "Oncologists"},
+    {label: "Surgeon", value: "Surgeon"},
+    {label: "Pediatrician", value: "Pediatrician"},
+    {label: "Rheumatologists", value: "Rheumatologists"},
   ]);
 
   const genderOptions = [
@@ -224,4 +224,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PatientInformation;
+export default PatientInformationScreen;

@@ -10,7 +10,7 @@ import {
 } from "react-native";
 
 // @ts-ignore
-const HospitalSOS = ({navigation}) => {
+const HospitalSOSScreen = ({navigation}) => {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -46,7 +46,7 @@ const HospitalSOS = ({navigation}) => {
           <View style={styles.buttonContainer}>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate("Patient Information");
+                navigation.navigate("SOS Dashboard");
               }}>
               <Text style={styles.title}>SOS Dashboard</Text>
             </TouchableOpacity>
@@ -89,4 +89,4 @@ const styles = StyleSheet.create({
   sosButton: {paddingBottom: "15%"},
 });
 
-export default HospitalSOS;
+export default HospitalSOSScreen;

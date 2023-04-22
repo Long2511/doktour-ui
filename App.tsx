@@ -5,11 +5,12 @@ import {StyleSheet, Text, useColorScheme, View} from "react-native";
 import {Colors} from "react-native/Libraries/NewAppScreen";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import PatientInformation from "./screen/PatientInformation";
-import HospitalSOS from "./screen/HospitalSOS";
+import PatientInformationScreen from "./screen/PatientInformationScreen";
+import HospitalSOSScreen from "./screen/HospitalSOSScreen";
 import {Provider} from "react-redux";
 import {store} from "./redux-toolkit/store/store";
-import FindDoctor from "./screen/FindDoctor";
+import FindDoctorScreen from "./screen/FindDoctorScreen";
+import DashboardScreen from "./screen/DashboardScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -56,17 +57,22 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen
             name={"Hospital SOS"}
-            component={HospitalSOS}
+            component={HospitalSOSScreen}
             options={{headerShown: false}}
           />
           <Stack.Screen
             name={"Patient Information"}
-            component={PatientInformation}
+            component={PatientInformationScreen}
             options={{headerShown: false}}
           />
           <Stack.Screen
             name={"Find Doctor"}
-            component={FindDoctor}
+            component={FindDoctorScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name={"SOS Dashboard"}
+            component={DashboardScreen}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
