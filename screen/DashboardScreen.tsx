@@ -15,49 +15,49 @@ const DashboardScreen = ({navigation}) => {
     {
       id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
       speciality: "Cardiology",
-      title: "Dr. Bellamy N",
+      buttonText: "Dr. Bellamy N",
       distance: "12",
       uri: require("../assets/doctor-images/bd7acbea-c1b1-46c2-aed5-3ad53abb28ba.png"),
     },
     {
       id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
       speciality: "Cardiology",
-      title: "Dr. Mensah T",
+      buttonText: "Dr. Mensah T",
       distance: "30",
       uri: require("../assets/doctor-images/3ac68afc-c605-48d3-a4f8-fbd91aa97f63.png"),
     },
     {
       id: "58694a0f-3da1-471f-bd96-145571e29d72",
       speciality: "Cardiology",
-      title: "Dr. O’Boyle J",
+      buttonText: "Dr. O’Boyle J",
       distance: "70",
       uri: require("../assets/doctor-images/58694a0f-3da1-471f-bd96-145571e29d72.png"),
     },
     {
       id: "1448f961-3b5d-4d81-895e-aac96aefdbed",
       speciality: "Cardiology",
-      title: "Dr. Marc M",
+      buttonText: "Dr. Marc M",
       distance: "70",
       uri: require("../assets/doctor-images/1448f961-3b5d-4d81-895e-aac96aefdbed.png"),
     },
     {
       id: "3aa28493-2173-4082-bc6f-78a1d9d0c689",
       speciality: "Cardiology",
-      title: "Dr. Mensah T",
+      buttonText: "Dr. Mensah T",
       distance: "70",
       uri: require("../assets/doctor-images/3aa28493-2173-4082-bc6f-78a1d9d0c689.png"),
     },
     {
       id: "20ce3cd5-55b4-424c-a46a-1555bf625dbc",
       speciality: "Cardiology",
-      title: "Dr. Bellamy N",
+      buttonText: "Dr. Bellamy N",
       distance: "70",
       uri: require("../assets/doctor-images/20ce3cd5-55b4-424c-a46a-1555bf625dbc.png"),
     },
     {
       id: "20ce3cd5-55b4-424c-a46a-1555bf625dbc",
       speciality: "Cardiology",
-      title: "Dr. Bellamy N",
+      buttonText: "Dr. Bellamy N",
       distance: "70",
       uri: require("../assets/doctor-images/20ce3cd5-55b4-424c-a46a-1555bf625dbc.png"),
     },
@@ -68,7 +68,7 @@ const DashboardScreen = ({navigation}) => {
     return (
       <View style={styles.item}>
         <Image source={uri} style={styles.itemImage} />
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.buttonText}>{title}</Text>
         <Text style={styles.subTitle}>{speciality}</Text>
         <Text style={styles.locationText}>{distance} mins away</Text>
       </View>
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
   },
-  title: {
+  buttonText: {
     color: "black",
     fontWeight: "bold",
     textAlign: "center",

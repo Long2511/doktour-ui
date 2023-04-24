@@ -41,7 +41,7 @@ const PatientInformationScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.textContainer}>
-        <Text style={styles.title}> Patient Information </Text>
+        <Text style={styles.buttonText}> Patient Information </Text>
       </View>
       <View style={styles.selectionSection}>
         <Text style={styles.specialtyText}>Specialty in need</Text>
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignSelf: "center",
   },
-  title: {
+  buttonText: {
     color: Color.darkslategray_100,
     fontSize: FontSize.size_lg,
     fontWeight: "bold",
@@ -205,7 +205,6 @@ const styles = StyleSheet.create({
   dropDown: {zIndex: 2},
   selectorButton: {marginTop: Border.lg},
   subTitleContainer: {marginTop: Border.lg},
-  buttonText: {fontSize: 20, color: Color.white},
   buttonContainer: {
     marginTop: Border.lg,
     width: "100%",

@@ -48,7 +48,7 @@ const HospitalSOSScreen = ({navigation}) => {
               onPress={() => {
                 navigation.navigate("SOS Dashboard");
               }}>
-              <Text style={styles.title}>SOS Dashboard</Text>
+              <Text style={styles.buttonText}>SOS Dashboard</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 50,
   },
-  title: {color: "white", fontSize: 20},
+  buttonText: {color: "white", fontSize: 20},
   sosButton: {paddingBottom: "15%"},
 });
 

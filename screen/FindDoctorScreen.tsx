@@ -3,6 +3,8 @@ import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {Border} from "../GlobalStyle/GlobalStyles";
 import Lottie from "lottie-react-native";
 import {useEffect, useRef} from "react";
+import {NavigationActions} from "react-navigation";
+import navigate = NavigationActions.navigate;
 
 // @ts-ignore
 const FindDoctorScreen = ({navigation}) => {
@@ -18,15 +20,18 @@ const FindDoctorScreen = ({navigation}) => {
         <Lottie
           ref={animationRef}
           source={require("../assets/search-doctor.json")}
+          onAnimationFinish={() => {
+            navigation.navigate("Matched Doctor");
+          }}
         />
       </View>
       <View style={styles.bottomContainer}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("Patient Information");
+              navigation.navigate("Matched Doctor");
             }}>
-            <Text style={styles.title}>Cancel</Text>
+            <Text style={styles.buttonText}>Cancel</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -53,10 +58,15 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     paddingBottom: Border.xsm,
   },
-  title: {color: "white", fontSize: 20},
+  buttonText: {
+    marginTop: 10,
+    color: "white",
+    fontSize: 20,
+  },
   bottomContainer: {
     flex: 1,
     justifyContent: "center",
+    alignItems: "center",
   },
 });
 

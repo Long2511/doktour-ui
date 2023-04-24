@@ -11,6 +11,8 @@ import {Provider} from "react-redux";
 import {store} from "./redux-toolkit/store/store";
 import FindDoctorScreen from "./screen/FindDoctorScreen";
 import DashboardScreen from "./screen/DashboardScreen";
+import MatchedDoctorScreen from "./screen/MatchedDoctorScreen";
+import OverviewAboutDoctor from "./screen/OverviewAboutDoctor";
 
 const Stack = createNativeStackNavigator();
 
@@ -73,6 +75,16 @@ const App = () => {
           <Stack.Screen
             name={"SOS Dashboard"}
             component={DashboardScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name={"Matched Doctor"}
+            component={MatchedDoctorScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name={"OverviewAboutDoctor"}
+            component={OverviewAboutDoctor}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
